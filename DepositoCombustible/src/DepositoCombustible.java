@@ -30,6 +30,16 @@ public class DepositoCombustible {
 	* 
 	*/ 
 	DepositoCombustible(double tankMax, double tankLevel) {
+		if (tankMax < 0 )  {
+			tankMax*=-1;
+		}
+		if (tankLevel < 0) {
+			tankLevel*=-1;
+		}
+		
+		if(tankMax < tankLevel) {
+			tankMax = tankLevel;
+		}
        this.depMax   = tankMax;
        this.depNivel = tankLevel;
     }
@@ -85,7 +95,11 @@ public class DepositoCombustible {
 	* 
 	*/
     public void fill(double amount){
-       depNivel = depNivel + amount;
+    	if (depNivel + amount > depMax) {
+    		depNivel = depMax;
+    	} else {
+    		depNivel = depNivel + amount;
+    	}
     }
 
    /**
@@ -95,6 +109,10 @@ public class DepositoCombustible {
     * 
     */
 	public void consumir(double amount){
-       depNivel = depNivel - amount;
+		if (depNivel - amount < 0) {
+    		depNivel = 0;
+    	} else {
+    		depNivel = depNivel - amount;
+    	}
     }
 }

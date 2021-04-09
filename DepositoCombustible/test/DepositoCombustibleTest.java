@@ -13,32 +13,39 @@ public class DepositoCombustibleTest {
 		
 		assertEquals(40,actual);
 		
-		
 	}
 
 	@Test
 	public void testGetDepositoMax() {
-		fail("Not yet implemented");
+		
+		DepositoCombustible d = new DepositoCombustible(80,40);
+		
+		int maximo = (int) d.getDepositoMax();
+		
+		assertEquals(80,maximo);
+		
 	}
 
 	@Test
 	public void testEstaVacio() {
-		fail("Not yet implemented");
+		
+		DepositoCombustible d = new DepositoCombustible(80,40);
+		
+		assertFalse(d.estaVacio());
+		
+		d.consumir(40);
+		
+		assertTrue(d.estaVacio());
+		
 	}
 
 	@Test
 	public void testEstaLleno() {
-		fail("Not yet implemented");
+		
+		DepositoCombustible d = new DepositoCombustible(80,40);
+
+		assertFalse(d.estaLleno());
 	}
 
-	@Test
-	public void testFill() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testConsumir() {
-		fail("Not yet implemented");
-	}
 
 }
