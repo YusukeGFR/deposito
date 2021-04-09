@@ -34,11 +34,5 @@ public class ParametrizadaLlenar {
 		int resultado = (int) d.getDepositoNivel();
 		assertEquals(res,resultado);
 	}
-	
-	
-	
-	
-	
-	
 
 }
